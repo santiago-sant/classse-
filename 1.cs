@@ -1,103 +1,48 @@
-namespace Santissimo
+using System;
+
+namespace alvin
 {
-	public class operacoes 
-	{
-		public string Nome { get; set; }
-        public int Cpf { get; set; }
-        public double Preco { get; set; }
+
+	class calculadora{
+		
+		public static int  somar (int x, int y){
+			return x + y;
+		}
+		public static int  subtrair (int x, int y){
+			return x - y;
+		}
+		public static int multiplicar (int x, int y){
+			return x * y;
+		}
+		public static int dividir (int x, int y){
+			return x / y;
+		}
+		
 	}
-    class Banco 
+	
+class Program
+{
+    public static void Main(string[] args)
     {
-        public void CriarConta (int x, int y)
-        {
-        	Random random = new Random();
-        	
-        }
-
-        public static int Subtracao(int x, int y)
-        {
-            return x - y;
-        }
-
-        public static int Multiplicacao(int x, int y)
-        {
-            return x * y;
-        }
-
-        public static int Divisao(int x, int y)
-        {
-            // Verifica se y é 0 para evitar divisão por zero
-            if (y == 0)
-            {
-                Console.WriteLine("Erro: Não é possível dividir por zero.");
-                return 0;
-            }
-            return x / y;
-        }
-    }
-
-    class Program
-    {
-        class Program
-    {
-        static Dictionary<string, ContaBancaria> contas = new Dictionary<string, ContaBancaria>();
-
-        static void Main(string[] args)
-        {
-            while (true)
-            {
-                Console.Clear();
-                Console.WriteLine("=== MENU BANCÁRIO ===");
-                Console.WriteLine("1 - Criar Conta");
-                Console.WriteLine("2 - Excluir Conta");
-                Console.WriteLine("3 - Depositar");
-                Console.WriteLine("4 - Sacar");
-                Console.WriteLine("5 - Sair");
-                Console.Write("Escolha uma opção: ");
-               
-                string opcao = Console.ReadLine();
-
-                switch (opcao)
-                {
-                    case "1":
-                        CriarConta();
-                        break;
-                    case "2":
-                        ExcluirConta();
-                        break;
-                    case "3":
-                        Depositar();
-                        break;
-                    case "4":
-                        Sacar();
-                        break;
-                    case "5":
-                        Console.WriteLine("Saindo do sistema. Até mais!");
-                        return;
-                    default:
-                        Console.WriteLine("Opção inválida! Pressione qualquer tecla para continuar.");
-                        Console.ReadKey();
-                        break;
-                }
-            }
-        }
-        
-            // Realizar as operações
-            int somar = Calculador.Soma(x, y);
-            int subtrair = Calculador.Subtracao(x, y);
-            int multiplicar = Calculador.Multiplicacao(x, y);
-            int dividir = Calculador.Divisao(x, y);
-
-            // Exibir resultados
-            Console.WriteLine($"Resultado da soma: {somar}");
-            Console.WriteLine($"Resultado da subtração: {subtrair}");
-            Console.WriteLine($"Resultado da multiplicação: {multiplicar}");
-            Console.WriteLine($"Resultado da divisão: {dividir}");
-
-            // Aguardar o usuário pressionar qualquer tecla
-            Console.Write("Pressione qualquer tecla para continuar . . . ");
-            Console.ReadKey(true);
-        }
+		
+    	Console.WriteLine("escreva um numero");
+    		int numero = int.Parse(Console.ReadLine());
+    	
+    	Console.WriteLine("escreva um numero");
+    		int numero2 = int.Parse(Console.ReadLine());
+	    
+    	int resultadoSoma = calculadora.somar(numero, numero2);
+    		int resultadoSubtracao = calculadora.subtrair(numero, numero2);
+    			int resultadoMultiplicacao = calculadora.multiplicar(numero, numero2);
+    				double resultadoDivisao = calculadora.dividir(numero, numero2);
+    	
+    	Console.WriteLine("a soma dos numeros é: {0} ",resultadoSoma);
+    		Console.WriteLine("a subtração dos numeros é: {0} ",resultadoSubtracao);
+    			Console.WriteLine("a multiplicação dos numeros é: {0} ",resultadoMultiplicacao);
+    				Console.WriteLine("a divisao dos numeros é: {0} ",resultadoDivisao);
+    	
+    	Console.ReadKey();
     }
 }
 
+}
